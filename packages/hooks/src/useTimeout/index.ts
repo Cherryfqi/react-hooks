@@ -1,5 +1,5 @@
 import useMemoizedFn from '../useMemoizedFn';
-import { useEffect, useRef, useCallBack } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { isNumber } from '../utils';
 
 type noop = () => void;
@@ -8,7 +8,7 @@ const useTimeout = (fn: noop, delay?: number) => {
   const timerCallback = useMemoizedFn(fn);
   const timerRef = useRef(null);
 
-  const clear = useCallBack(() => {
+  const clear = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }

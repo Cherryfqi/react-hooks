@@ -18,8 +18,8 @@ export default () => {
     <div>
       <p>count : {count}</p>
       <p>delay : {delay}</p>
-      <button onClick={setDelay((t) => (!!t ? t + 1000 : 1000))}>延迟时间 +1s</button>
-      <button onClick={setDelay(1000)}>重置为 +1s</button>
+      <button onClick={() => setDelay((t) => (!!t ? t + 1000 : 1000))}>延迟时间 +1s</button>
+      <button onClick={() => setDelay(1000)}>重置为 +1s</button>
       <button onClick={clear}>重置</button>
     </div>
   );
